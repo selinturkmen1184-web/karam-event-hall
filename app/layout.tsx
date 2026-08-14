@@ -33,5 +33,5 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     },
     sameAs: ["https://www.instagram.com/karameventhall/"],
   };
-  return <html lang="tr"><body>{children}<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }} /></body></html>;
+  return <html lang="tr"><head><link rel="icon" href="/icon.png" type="image/png" /><link rel="apple-touch-icon" href="/icon.png" /></head><body>{children}<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }} /></body></html>;
 }

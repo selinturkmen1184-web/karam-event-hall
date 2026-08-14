@@ -14,6 +14,7 @@ mkdirSync(output, { recursive: true });
 cpSync(join(root, "public/images"), join(output, "images"), { recursive: true });
 cpSync(join(root, "public/og.png"), join(output, "og.png"));
 cpSync(join(root, "public/favicon.svg"), join(output, "favicon.svg"));
+cpSync(join(root, "public/icon.png"), join(output, "icon.png"));
 writeFileSync(join(output, ".nojekyll"), "");
 writeFileSync(join(output, "style.css"), readFileSync(join(cssDirectory, cssFile), "utf8"));
 
@@ -55,7 +56,7 @@ const document = `<!doctype html>
   <meta property="og:image" content="https://selinturkmen1184-web.github.io/karam-event-hall/og.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://selinturkmen1184-web.github.io/karam-event-hall/">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="icon.png" type="image/png">
   <link rel="stylesheet" href="style.css">
   <script type="application/ld+json">${structuredData}</script>
 </head>

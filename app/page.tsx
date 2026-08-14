@@ -32,8 +32,7 @@ export default function Home() {
 
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Karam Event Hall ana sayfa">
-          <span className="brand-mark">K</span>
-          <span><strong>KARAM</strong><small>EVENT HALL</small></span>
+          <img className="brand-logo" src="/images/karam-event-logo.png" alt="" />
         </a>
         <nav aria-label="Ana menü">
           <a href="#hakkimizda">Hakkımızda</a>
@@ -172,7 +171,7 @@ export default function Home() {
       </section>
 
       <footer>
-        <div className="footer-brand"><span className="brand-mark">K</span><div><strong>KARAM</strong><small>EVENT HALL</small></div></div>
+        <div className="footer-brand"><img className="footer-logo" src="/images/karam-event-logo.png" alt="Karam Event" loading="lazy" /></div>
         <div><p className="footer-label">Adres</p><p>Zafer Mahallesi, Adile Naşit Bulvarı<br />Gümüş Panorama Çarşı, K Blok<br />Esenyurt / İstanbul</p><a className="footer-map" href="https://www.google.com/maps/search/?api=1&query=Karam+Event+Hall+Esenyurt" target="_blank" rel="noreferrer">Yol tarifi alın ↗</a></div>
         <div><p className="footer-label">İletişim</p><a href="tel:+905454055866">0545 405 58 66</a><a href="https://www.instagram.com/karameventhall/" target="_blank" rel="noreferrer">@karameventhall</a></div>
         <div><p className="footer-label">Hızlı bağlantı</p><a href="#davetler">Davetler</a><a href="#galeri">Galeri</a><a href="#planla">Tarih planla</a><a href={whatsapp("Merhaba Karam Event Hall, bilgi almak istiyorum.")} target="_blank" rel="noreferrer">WhatsApp</a></div>
