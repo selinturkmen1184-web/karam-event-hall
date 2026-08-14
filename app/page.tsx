@@ -1,4 +1,5 @@
 import { ReservationPlanner } from "./ReservationPlanner";
+import { SiteEnhancements } from "./SiteEnhancements";
 
 const whatsappBase = "https://wa.me/905454055866";
 
@@ -28,6 +29,7 @@ function ArrowIcon() {
 export default function Home() {
   return (
     <main>
+      <SiteEnhancements />
       <div className="announcement">2026 davet takvimi açıldı · Tarihinizi ayırtın</div>
 
       <header className="site-header">
@@ -55,7 +57,8 @@ export default function Home() {
       <section className="hero" id="top">
         <img className="hero-image" src="/images/hero-couple.jpg" alt="Karam Event Hall'da mutlu bir çift" />
         <div className="hero-overlay" />
-        <div className="hero-copy">
+        <div className="hero-frame" aria-hidden="true" />
+        <div className="hero-copy" data-reveal>
           <p className="eyebrow">Esenyurt · İstanbul</p>
           <h1>En güzel “evet”lerin<br /><em>buluşma noktası.</em></h1>
           <p className="hero-lead">Hayalinizdeki daveti, size özel dokunuşlar ve kusursuz bir akışla gerçeğe dönüştürüyoruz.</p>
@@ -64,7 +67,8 @@ export default function Home() {
             <a className="text-link" href="#galeri">Mekânı keşfet <span>↓</span></a>
           </div>
         </div>
-        <div className="hero-note"><span>Butik davet deneyimi</span><strong>Sizin hikâyeniz,<br />bizim inceliğimiz.</strong></div>
+        <div className="hero-note" data-reveal><span>Butik davet deneyimi</span><strong>Sizin hikâyeniz,<br />bizim inceliğimiz.</strong></div>
+        <a className="scroll-cue" href="#hakkimizda"><span>Keşfet</span><i aria-hidden="true" /></a>
       </section>
 
       <section className="trust-strip" aria-label="Karam Event Hall hizmet özellikleri">
@@ -75,20 +79,34 @@ export default function Home() {
       </section>
 
       <section className="intro section" id="hakkimizda">
-        <div>
+        <div data-reveal>
           <p className="eyebrow dark">Karam deneyimi</p>
           <h2>Bir salondan fazlası.<br /><em>Size ait bir atmosfer.</em></h2>
         </div>
-        <div className="intro-copy">
+        <div className="intro-copy" data-reveal>
           <p>Karam Event Hall; sözden kınaya, butik düğünden özel kutlamalara kadar her anı özenle kurgulayan sıcak ve modern bir davet alanıdır.</p>
           <p>Bahçe karşılaması, şık salon düzeni, sahne, ışık ve ses altyapısı ile siz anın tadını çıkarırken bütün ayrıntıları biz düşünürüz.</p>
           <a href={whatsapp("Merhaba, Karam Event Hall hizmetleri ve organizasyon desteği hakkında bilgi alabilir miyim?")} target="_blank" rel="noreferrer" className="line-link">Detaylı bilgi alın <ArrowIcon /></a>
         </div>
       </section>
 
+      <section className="editorial-signature section">
+        <div className="editorial-copy" data-reveal>
+          <p className="eyebrow dark">Karam imzası</p>
+          <h2>Gösterişli değil.<br /><em>Zahmetsizce etkileyici.</em></h2>
+          <p>Renkten ışığa, masa düzeninden sahne anına kadar her parçayı aynı estetik dilde buluşturuyoruz. Sonuç; kalabalığın içinde bile size ait hissettiren bir kutlama.</p>
+          <a className="line-link" href="#planla">Davetini birlikte tasarlayalım <ArrowIcon /></a>
+        </div>
+        <div className="editorial-visual" data-reveal>
+          <figure className="editorial-main"><img src="/images/service-detail.jpg" alt="Karam Event Hall zarif davet detayı" loading="lazy" /></figure>
+          <figure className="editorial-float"><img src="/images/garden-celebration.jpg" alt="Karam Event Hall bahçe kutlaması" loading="lazy" /></figure>
+          <span className="editorial-seal" aria-hidden="true">K·E</span>
+        </div>
+      </section>
+
       <section className="experience-grid">
         <div className="experience-image"><img src="/images/outdoor-couple.jpg" alt="Karam Event Hall bahçe alanında çift" /></div>
-        <div className="experience-copy">
+        <div className="experience-copy" data-reveal>
           <p className="eyebrow">Neden Karam?</p>
           <h2>Her detay,<br /><em>sizi anlatır.</em></h2>
           <div className="feature-list">
@@ -99,12 +117,24 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="atmosphere section">
+        <div className="section-heading" data-reveal>
+          <div><p className="eyebrow dark">Davet ritmi</p><h2>Gecenin her anı,<br /><em>tek bir bütün.</em></h2></div>
+          <p>Karşılamadan son şarkıya kadar atmosferi yükselten üç temel dokunuş.</p>
+        </div>
+        <div className="atmosphere-grid">
+          <article data-reveal><figure><img src="/images/outdoor-couple.jpg" alt="Karam Event Hall bahçe karşılaması" loading="lazy" /></figure><span>01</span><h3>Karşılama</h3><p>İlk bakışta sıcak, ilk adımda size ait.</p></article>
+          <article data-reveal><figure><img src="/images/engagement-couple.jpg" alt="Karam Event Hall nişan anı" loading="lazy" /></figure><span>02</span><h3>Tören</h3><p>Işığı, sahnesi ve akışı kusursuz bir merkez an.</p></article>
+          <article data-reveal><figure><img src="/images/henna-night.jpg" alt="Karam Event Hall kutlama gecesi" loading="lazy" /></figure><span>03</span><h3>Kutlama</h3><p>Enerjisi yükselen, hafızada kalan bir final.</p></article>
+        </div>
+      </section>
+
       <section className="services section" id="davetler">
-        <div className="section-heading">
+        <div className="section-heading" data-reveal>
           <div><p className="eyebrow dark">Davetler</p><h2>Her kutlama için<br /><em>başka bir hikâye.</em></h2></div>
           <p>Konseptiniz ne olursa olsun; mekânı, akışı ve atmosferi o güne özel kurgularız.</p>
         </div>
-        <div className="service-list">
+        <div className="service-list" data-reveal>
           {services.map((service) => (
             <a key={service.number} href={whatsapp(`Merhaba, ${service.title} organizasyonu için paket ve müsaitlik bilgisi almak istiyorum.`)} target="_blank" rel="noreferrer" className="service-row">
               <span>{service.number}</span><h3>{service.title}</h3><p>{service.text}</p><ArrowIcon />
@@ -113,12 +143,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="quote-band">
+      <section className="quote-band" data-reveal>
         <p>“Kutlamanız bir gün sürer.</p><h2>Hissettirdikleri<br /><em>bir ömür kalır.</em>”</h2>
       </section>
 
       <section className="planner section" id="planla">
-        <div className="planner-copy">
+        <div className="planner-copy" data-reveal>
           <p className="eyebrow dark">Hızlı teklif</p>
           <h2>Davetini anlat.<br /><em>Müsaitliğini öğren.</em></h2>
           <p>Dört kısa bilgiyle WhatsApp mesajınızı hazırlayın. Ekibimiz uygun tarih ve paket seçenekleriyle size dönüş yapsın.</p>
@@ -126,22 +156,22 @@ export default function Home() {
             <span>✓ Ücretsiz ön görüşme</span><span>✓ Hızlı müsaitlik kontrolü</span><span>✓ Size özel paket</span>
           </div>
         </div>
-        <ReservationPlanner />
+        <div data-reveal><ReservationPlanner /></div>
       </section>
 
       <section className="gallery section" id="galeri">
-        <div className="section-heading gallery-heading">
+        <div className="section-heading gallery-heading" data-reveal>
           <div><p className="eyebrow dark">Karam’dan anlar</p><h2>Gerçek hikâyeler.<br /><em>Gerçek mutluluklar.</em></h2></div>
           <a className="line-link" href="https://www.instagram.com/karameventhall/" target="_blank" rel="noreferrer">Instagram’da takip et <ArrowIcon /></a>
         </div>
         <div className="gallery-grid">
-          {gallery.map((image) => <figure key={image.src} className={image.className}><img src={image.src} alt={image.alt} loading="lazy" /></figure>)}
+          {gallery.map((image) => <figure key={image.src} className={image.className} data-reveal><img src={image.src} alt={image.alt} loading="lazy" /></figure>)}
         </div>
       </section>
 
       <section className="process section">
-        <div><p className="eyebrow dark">Dört kolay adım</p><h2>Hayalden<br /><em>kutlamaya.</em></h2></div>
-        <ol>
+        <div data-reveal><p className="eyebrow dark">Dört kolay adım</p><h2>Hayalden<br /><em>kutlamaya.</em></h2></div>
+        <ol data-reveal>
           <li><span>01</span><div><strong>Tarihinizi paylaşın</strong><p>Etkinlik türü, tarih ve tahmini kişi sayısını iletin.</p></div></li>
           <li><span>02</span><div><strong>Mekânı görün</strong><p>Salonumuzu gezin, ihtiyaçlarınızı birlikte konuşalım.</p></div></li>
           <li><span>03</span><div><strong>Paketinizi belirleyin</strong><p>Konsept ve hizmetleri bütçenize göre netleştirelim.</p></div></li>
@@ -150,8 +180,8 @@ export default function Home() {
       </section>
 
       <section className="faq section" id="sorular">
-        <div className="faq-heading"><p className="eyebrow dark">Merak edilenler</p><h2>Karar vermeden<br /><em>önce bilmeniz gerekenler.</em></h2></div>
-        <div className="faq-list">
+        <div className="faq-heading" data-reveal><p className="eyebrow dark">Merak edilenler</p><h2>Karar vermeden<br /><em>önce bilmeniz gerekenler.</em></h2></div>
+        <div className="faq-list" data-reveal>
           <details><summary>Paketlere hangi hizmetler dahil?</summary><p>İçerik; etkinlik türü, kişi sayısı ve seçilen konsepte göre değişir. Işık, ses, sahne, ikram ve organizasyon desteği seçenekleri ön görüşmede netleştirilir.</p></details>
           <details><summary>Mekânı görmeden rezervasyon yapılır mı?</summary><p>Ön bilgi WhatsApp üzerinden paylaşılabilir; en doğru paket ve yerleşim için salon ziyareti öneriyoruz.</p></details>
           <details><summary>Bahçe ve salon birlikte kullanılabilir mi?</summary><p>Etkinlik akışına ve hava koşullarına göre karşılama ile kutlama bölümleri bahçe–salon bütünlüğünde planlanabilir.</p></details>
@@ -162,7 +192,7 @@ export default function Home() {
       <section className="cta-section" id="iletisim">
         <img src="/images/engagement-couple.jpg" alt="Karam Event Hall çift çekimi" />
         <div className="cta-overlay" />
-        <div className="cta-content">
+        <div className="cta-content" data-reveal>
           <p className="eyebrow">Sıra sizin hikâyenizde</p>
           <h2>Tarihiniz için<br /><em>ilk adımı atın.</em></h2>
           <p>Etkinlik türü, tarih ve kişi sayısını yazın; uygun seçeneklerle size dönüş yapalım.</p>
