@@ -17,5 +17,21 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="tr"><body>{children}</body></html>;
+  const localBusiness = {
+    "@context": "https://schema.org",
+    "@type": "EventVenue",
+    name: "Karam Event Hall",
+    url: "https://selinturkmen1184-web.github.io/karam-event-hall/",
+    telephone: "+90 545 405 58 66",
+    image: "https://selinturkmen1184-web.github.io/karam-event-hall/og.png",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Zafer Mahallesi, Adile Naşit Bulvarı, Gümüş Panorama Çarşı, K Blok",
+      addressLocality: "Esenyurt",
+      addressRegion: "İstanbul",
+      addressCountry: "TR",
+    },
+    sameAs: ["https://www.instagram.com/karameventhall/"],
+  };
+  return <html lang="tr"><body>{children}<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }} /></body></html>;
 }
