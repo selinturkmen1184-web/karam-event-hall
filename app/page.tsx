@@ -22,8 +22,26 @@ const gallery = [
   { src: "/images/service-detail.jpg", alt: "Karam Event Hall ikram detayı", className: "gallery-wide" },
 ];
 
+const instagramHighlights = [
+  { src: "/images/hero-couple.jpg", alt: "Karam Event Hall söz ve nişan kutlaması", title: "Söz & Nişan" },
+  { src: "/images/garden-celebration.jpg", alt: "Karam Event Hall bahçe daveti", title: "Bahçe Davetleri" },
+  { src: "/images/henna-bride.jpg", alt: "Karam Event Hall kına gecesi gelini", title: "Kına Gecesi" },
+  { src: "/images/service-detail.jpg", alt: "Karam Event Hall ikram ve sunum detayı", title: "Karam Detayları" },
+  { src: "/images/henna-night.jpg", alt: "Karam Event Hall eğlence gecesi", title: "Kutlama Anları" },
+];
+
 function ArrowIcon() {
   return <span aria-hidden="true">↗</span>;
+}
+
+function InstagramIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.4" cy="6.7" r="1" className="instagram-icon-dot" />
+    </svg>
+  );
 }
 
 export default function Home() {
@@ -40,7 +58,7 @@ export default function Home() {
           <a href="#hakkimizda">Hakkımızda</a>
           <a href="#davetler">Davetler</a>
           <a href="#galeri">Galeri</a>
-          <a href="#planla">Tarih Planla</a>
+          <a href="#instagram">Instagram</a>
           <a href="#iletisim">İletişim</a>
         </nav>
         <a className="header-cta" href={whatsapp("Merhaba Karam Event Hall, davetim için bilgi ve müsaitlik almak istiyorum.")} target="_blank" rel="noreferrer">
@@ -49,7 +67,7 @@ export default function Home() {
         <details className="mobile-menu">
           <summary aria-label="Menüyü aç"><span></span><span></span><span></span></summary>
           <div>
-            <a href="#hakkimizda">Hakkımızda</a><a href="#davetler">Davetler</a><a href="#galeri">Galeri</a><a href="#planla">Tarih Planla</a><a href="#iletisim">İletişim</a>
+            <a href="#hakkimizda">Hakkımızda</a><a href="#davetler">Davetler</a><a href="#galeri">Galeri</a><a href="#instagram">Instagram</a><a href="#planla">Tarih Planla</a><a href="#iletisim">İletişim</a>
           </div>
         </details>
       </header>
@@ -100,7 +118,7 @@ export default function Home() {
         <div className="editorial-visual" data-reveal>
           <figure className="editorial-main"><img src="/images/service-detail.jpg" alt="Karam Event Hall zarif davet detayı" loading="lazy" /></figure>
           <figure className="editorial-float"><img src="/images/garden-celebration.jpg" alt="Karam Event Hall bahçe kutlaması" loading="lazy" /></figure>
-          <span className="editorial-seal" aria-hidden="true">K·E</span>
+          <span className="editorial-seal" aria-hidden="true"><img src="/images/karam-event-logo.png" alt="" loading="lazy" /></span>
         </div>
       </section>
 
@@ -169,6 +187,32 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="instagram-section section" id="instagram">
+        <div className="instagram-heading" data-reveal>
+          <div>
+            <p className="eyebrow dark">Instagram’da Karam</p>
+            <h2>İlham veren anlar.<br /><em>Her gün yeni bir hikâye.</em></h2>
+          </div>
+          <div className="instagram-profile">
+            <span className="instagram-avatar"><img src="/images/karam-event-logo.png" alt="" loading="lazy" /></span>
+            <span className="instagram-profile-copy"><strong>@karameventhall</strong><small>Esenyurt · İstanbul</small></span>
+            <a href="https://www.instagram.com/karameventhall/" target="_blank" rel="noreferrer" aria-label="Karam Event Hall Instagram hesabını takip et"><InstagramIcon /><span>Takip et</span></a>
+          </div>
+        </div>
+        <div className="instagram-feed" aria-label="Karam Event Hall Instagram içerik vitrini">
+          {instagramHighlights.map((item) => (
+            <a className="instagram-card" href="https://www.instagram.com/karameventhall/" target="_blank" rel="noreferrer" key={item.src} data-reveal>
+              <img src={item.src} alt={item.alt} loading="lazy" />
+              <span className="instagram-card-copy"><strong>{item.title}</strong><small>Instagram’da gör <ArrowIcon /></small></span>
+            </a>
+          ))}
+        </div>
+        <div className="instagram-footer" data-reveal>
+          <span><InstagramIcon /> Güncel davetler, hazırlıklar ve sahne arkası</span>
+          <a className="line-link" href="https://www.instagram.com/karameventhall/" target="_blank" rel="noreferrer">@karameventhall hesabına git <ArrowIcon /></a>
+        </div>
+      </section>
+
       <section className="process section">
         <div data-reveal><p className="eyebrow dark">Dört kolay adım</p><h2>Hayalden<br /><em>kutlamaya.</em></h2></div>
         <ol data-reveal>
@@ -204,7 +248,7 @@ export default function Home() {
         <div className="footer-brand"><img className="footer-logo" src="/images/karam-event-logo.png" alt="Karam Event" loading="lazy" /></div>
         <div><p className="footer-label">Adres</p><p>Zafer Mahallesi, Adile Naşit Bulvarı<br />Gümüş Panorama Çarşı, K Blok<br />Esenyurt / İstanbul</p><a className="footer-map" href="https://www.google.com/maps/search/?api=1&query=Karam+Event+Hall+Esenyurt" target="_blank" rel="noreferrer">Yol tarifi alın ↗</a></div>
         <div><p className="footer-label">İletişim</p><a href="tel:+905454055866">0545 405 58 66</a><a href="https://www.instagram.com/karameventhall/" target="_blank" rel="noreferrer">@karameventhall</a></div>
-        <div><p className="footer-label">Hızlı bağlantı</p><a href="#davetler">Davetler</a><a href="#galeri">Galeri</a><a href="#planla">Tarih planla</a><a href={whatsapp("Merhaba Karam Event Hall, bilgi almak istiyorum.")} target="_blank" rel="noreferrer">WhatsApp</a></div>
+        <div><p className="footer-label">Hızlı bağlantı</p><a href="#davetler">Davetler</a><a href="#galeri">Galeri</a><a href="#instagram">Instagram</a><a href="#planla">Tarih planla</a><a href={whatsapp("Merhaba Karam Event Hall, bilgi almak istiyorum.")} target="_blank" rel="noreferrer">WhatsApp</a></div>
         <div className="footer-bottom"><span>© 2026 Karam Event Hall</span><span>Mutluluğunuz için, incelikle.</span></div>
       </footer>
 
